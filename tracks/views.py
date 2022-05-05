@@ -1,15 +1,15 @@
 from rest_framework import viewsets
 from rest_framework.generics import mixins
-from serializers import DataPointSerializer
-from models import DataPoint
+from tracks.serializers import DataPointSerializer
+from tracks.models import DataPoint
 from django.shortcuts import render
 import string
 import random
-from permissions import TracksPermission
+from tracks.permissions import TracksPermission
 from django.db.models import Count
 import csv
 from django.http import HttpResponse, HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class ReadOnlyModelViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):

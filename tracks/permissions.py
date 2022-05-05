@@ -1,5 +1,5 @@
 from rest_framework import permissions
-from models import AllowedIPs
+from tracks.models import AllowedIPs
 
 
 class TracksPermission(permissions.BasePermission):
