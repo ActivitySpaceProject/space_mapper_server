@@ -1,0 +1,26 @@
+{% extends "rest_framework/base.html" %}
+
+{% block title %}
+        Space Mapper API
+{% endblock %}
+
+{% block branding %}
+<a class='navbar-brand' rel="nofollow" href='/api'>Space Mapper API
+    </a>
+{% endblock %}
+
+{% block userlinks %}
+            <li><a href={% url 'show_user_code'  %}><span style="color:#269abc;">User Code Page</span></a></li>
+        {{ block.super}}
+{% endblock %}
+
+{% block script %}
+
+{{ block.super }}
+
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}

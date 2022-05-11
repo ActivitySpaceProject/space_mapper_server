@@ -1,13 +1,12 @@
-from django.urls import include, path
+from django.urls import include, path, re_path
 from rest_framework import routers
 from tracks import views
 
 
-router = routers.DefaultRouter()
-router.register(r'data_points', views.DataPointViewSet)
-router.register(r'read_data_points', views.ReadDataPointViewSet)
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'read', views.ReadDataPointViewSet, basename='read')
+router.register(r'write', views.DataPointViewSet, basename='write')
 
-
-urlpatterns = ['tracks.views',
-    path('^', include(router.urls)),
+urlpatterns = [
+    re_path(r'^', include(router.urls))
 ]

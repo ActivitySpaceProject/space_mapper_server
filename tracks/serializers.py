@@ -7,3 +7,4 @@ class DataPointSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataPoint
+        fields = '__all__'

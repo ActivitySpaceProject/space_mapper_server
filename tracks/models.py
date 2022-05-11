@@ -9,8 +9,8 @@ class DataPoint(models.Model):
     app_version = models.CharField(max_length=300, blank=True, null=True)
     type = models.CharField(max_length=3)
     encrypted_message = models.TextField()
-    last_modified = models.DateTimeField(auto_now=True, default=datetime.now())
-    created = models.DateTimeField(auto_now_add=True, default=datetime.now())
+    last_modified = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'data point'
