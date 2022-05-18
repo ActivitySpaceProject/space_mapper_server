@@ -58,6 +58,9 @@ def show_user_code(request):
     context = {'this_code': this_code}
     return render(request, 'tracks/get_user_code.html', context)
 
+def show_landing_page(request):
+    return render(request, 'tracks/index.html')
+
 
 def download_fix_stats(request):
     if request.user.is_authenticated() and 'stats_access' in [group.name for group in request.user.groups.all()]:

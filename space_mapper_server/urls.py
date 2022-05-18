@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import include, path, re_path
 from django.contrib import admin, auth
-from tracks.views import show_user_code, download_fix_stats, download_reg_stats
+from tracks.views import show_user_code, show_landing_page, download_fix_stats, download_reg_stats
 
 
 urlpatterns = [
@@ -26,5 +26,5 @@ urlpatterns = [
     re_path(r'^fix_stats/', download_fix_stats, name='download_fix_stats'),
     re_path(r'^reg_stats/', download_reg_stats, name='download_reg_stats'),
     re_path(r'^accounts/login/$', auth.views.LoginView.as_view(), name='auth_login'),
-    re_path(r'^$', show_user_code)
+    re_path(r'^$', show_landing_page)
 ]
