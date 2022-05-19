@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 class DataPoint(models.Model):
-    user_UUID = models.CharField(max_length=36)
+    user_UUID = models.CharField(max_length=36, verbose_name='user UUID', help_text='36-character UUID that should be generated randomly by the device when the user registers. Unique to each user.')
     user_code = models.CharField(max_length=8, blank=True, null=True)
     app_version = models.CharField(max_length=300, blank=True, null=True)
     os = models.CharField(max_length=10, blank=True, null=True)
