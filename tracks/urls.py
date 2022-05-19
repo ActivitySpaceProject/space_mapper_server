@@ -4,7 +4,6 @@ from tracks import views
 
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'read', views.ReadDataPointViewSet, basename='read')
 router.register(r'write', views.DataPointViewSet, basename='write')
 
 urlpatterns = [
