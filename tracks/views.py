@@ -45,7 +45,8 @@ class ReadWriteOnlyModelViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet
 class DataPointViewSet(WriteOnlyModelViewSet):
     queryset = DataPoint.objects.all()
     serializer_class = DataPointSerializer
-
+    permission_classes = []
+    authentication_classes = []
 
 class ReadDataPointViewSet(ReadOnlyModelViewSet):
     queryset = DataPoint.objects.all()
